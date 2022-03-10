@@ -22,7 +22,6 @@ public class Juego {
 
     private void simulacion(Mina mina){
         int segundos = 0;
-
         while(segundos < 60 && mina.getCantera() > 0){
             int counter = segundos;
             civilizaciones.forEach(
@@ -49,7 +48,7 @@ public class Juego {
         }
         civilizaciones.forEach(
             (i, j) ->{
-                String civ = String.format("Los %s han acabado con %s recursos y %s aldeanos",j.getCivilizacion().toString(), j.getAlmacen(), j.getAldeanos().size());
+                String civ = String.format("Los %s, gobernados por %s han acabado con %s recursos y %s aldeanos",j.getCivilizacion().toString(), j.GetRey(), j.getAlmacen(), j.getAldeanos().size());
                 System.out.println(civ);
             }
         );
