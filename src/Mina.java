@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
+
 public class Mina {
-    private enum materiales {Oro, Piedra};
+    public static enum materiales {Oro, Piedra};
     private materiales material;
     private int cantera;
     private ArrayList<Aldeano> espanioles = new ArrayList<>();
@@ -41,8 +42,18 @@ public class Mina {
 
     public Mina() {
         setMaterial(materiales.Oro);
-        setCantera(250);
+        setCantera(500);
     }
+    public Mina(int cantidad) {
+        setMaterial(materiales.Oro);
+        setCantera(cantidad);
+    }
+    public Mina(materiales material, int cantidad) {
+        setMaterial(material);
+        setCantera(cantidad);
+    }
+
+
     public int extraerRecursosEsp(){
         return espanioles.size();
     }
