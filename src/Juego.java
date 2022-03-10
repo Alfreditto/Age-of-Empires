@@ -15,6 +15,7 @@ public class Juego {
         int counter = 0;
         for (Globales.civilizaciones civilizaciones : Globales.civilizaciones.values()) {
             Civilizacion civ = new Civilizacion(civilizaciones, Globales.probabilidad.values()[counter]);
+            counter++;
             this.civilizaciones.put(civ.getCivilizacion(), civ);
         }
     }

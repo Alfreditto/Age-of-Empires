@@ -1,12 +1,7 @@
-import java.util.ArrayList;
-
-
 public class Mina {
     public static enum materiales {Oro, Piedra};
     private materiales material;
     private int cantera;
-    private ArrayList<Aldeano> espanioles = new ArrayList<>();
-    private ArrayList<Aldeano> bizantino = new ArrayList<>();
 
     public materiales getMaterial() {
         return material;
