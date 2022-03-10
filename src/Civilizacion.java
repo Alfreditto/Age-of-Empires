@@ -42,11 +42,23 @@ public class Civilizacion {
         almacen+=cantidad;
     }
 
+    public void anadirAldeano(){
+        aldeanos.add(new Aldeano(civilizacion));
+    }
+
     private void aldeanoInicial(){
         aldeanos.add(new Aldeano(civilizacion));
     }
 
-    public void robarAldeano(ArrayList<Aldeano> robada, ArrayList<Aldeano> ladron){
+    public void robarAldeano(Civilizacion robada){
+        ArrayList<Aldeano> aldeanos = robada.aldeanos;
+        if(aldeanos.size() <= 0) return;
+        int aldeanoARobar = (int)(Math.random()*(aldeanos.size()-0)+0);
+        this.aldeanos.add(aldeanos.get(aldeanoARobar));
+        robada.perderAldeano(aldeanoARobar);
+    }
 
+    private void perderAldeano(int aldeanoPerdido){
+        this.aldeanos.remove(aldeanoPerdido);
     }
 }

@@ -12,22 +12,6 @@ public class Mina {
         return material;
     }
 
-    public ArrayList<Aldeano> getEspanioles() {
-        return espanioles;
-    }
-
-    public void setEspanioles(ArrayList<Aldeano> espanioles) {
-        this.espanioles = espanioles;
-    }
-
-    public ArrayList<Aldeano> getBizantino() {
-        return bizantino;
-    }
-
-    public void setBizantino(ArrayList<Aldeano> bizantino) {
-        this.bizantino = bizantino;
-    }
-
     public void setMaterial(materiales material) {
         this.material = material;
     }
@@ -38,6 +22,10 @@ public class Mina {
 
     public void setCantera(int cantera) {
         this.cantera = cantera;
+    }
+
+    public void extraidos(int cantidad){
+        this.cantera =- cantidad;
     }
 
     public Mina() {
@@ -51,13 +39,5 @@ public class Mina {
     public Mina(materiales material, int cantidad) {
         setMaterial(material);
         setCantera(cantidad);
-    }
-
-
-    public int extraerRecursosEsp(){
-        return espanioles.size();
-    }
-    public int extraerRecursosBiz(){
-        return bizantino.size();
     }
 }
