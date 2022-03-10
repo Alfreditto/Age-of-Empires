@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Civilizacion {
     public static enum civilizaciones {Espaniol, Bizantino};
-    String[] reyes = new String[]{"Fernando el calvo", "Adolfo el cojo", "Jaime el loco", "Alfredo la tortuga"};
+    String[] reyes = new String[]{"Fernando el calvo", "Adolfo el cojo", "Jaime el loco", "Alfredo la tortuga", "Xinxi el mago", "Jose Triste", "Jose Feliz", "Juan Guadiana"};
 
 
     private String rey;

@@ -21,7 +21,7 @@ public class Juego {
     private void simulacion(Mina mina){
         int segundos = 0;
 
-        while(segundos < 60){
+        while(segundos < 60 && mina.getCantera() > 0){
             Civilizacion espaniol = civilizaciones.get(Civilizacion.civilizaciones.Espaniol);
             Civilizacion bizantino = civilizaciones.get(Civilizacion.civilizaciones.Bizantino);
             if (segundos % 2 == 0){

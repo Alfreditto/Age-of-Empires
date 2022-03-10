@@ -25,7 +25,7 @@ public class Mina {
     }
 
     public void extraidos(int cantidad){
-        this.cantera =- cantidad;
+        this.cantera -= cantidad;
     }
 
     public Mina() {
