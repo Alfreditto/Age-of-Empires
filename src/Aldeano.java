@@ -1,15 +1,15 @@
 public class Aldeano {
     
-    private Civilizacion.civilizaciones civilizacion;
+    private Globales.civilizaciones civilizacion;
     private int salud;
 
-    public Civilizacion.civilizaciones getCivilizacion() {
+    public Globales.civilizaciones getCivilizacion() {
         return civilizacion;
     }
 
-    private void setCivilizacion(Civilizacion.civilizaciones civilizacion) {
+    private void setCivilizacion(Globales.civilizaciones civilizacion) {
         this.civilizacion = civilizacion;
-        salud = civilizacion == Civilizacion.civilizaciones.Espaniol ? 200 : 250;
+        salud = civilizacion == Globales.civilizaciones.Espanioles ? 200 : 250;
         setSalud(salud);
     }
 
@@ -21,7 +21,7 @@ public class Aldeano {
         this.salud = salud;
     }
 
-    public Aldeano(Civilizacion.civilizaciones civilizacion) {
+    public Aldeano(Globales.civilizaciones civilizacion) {
         setCivilizacion(civilizacion);
     }
 }

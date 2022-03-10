@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 
 public class Civilizacion {
-    public static enum civilizaciones {Espaniol, Bizantino};
     String[] reyes = new String[]{"Fernando el calvo", "Adolfo el cojo", "Jaime el loco", "Alfredo la tortuga", "Xinxi el mago", "Jose Triste", "Jose Feliz", "Juan Guadiana"};
-
 
     private String rey;
 
     private ArrayList<Aldeano> aldeanos = new ArrayList<>();
-    private civilizaciones civilizacion;
+    private Globales.civilizaciones civilizacion;
     private int almacen = 0;
+    private double probabilidad;
 
-    public Civilizacion(civilizaciones civilizacion) {
+    public Civilizacion(Globales.civilizaciones civilizacion, Globales.probabilidad probabilidad) {
         this.civilizacion = civilizacion;
+        this.probabilidad = probabilidad.getValue();
         setRey();
         aldeanoInicial();
     }
@@ -26,7 +26,7 @@ public class Civilizacion {
         return rey;
     }
 
-    public civilizaciones getCivilizacion(){
+    public Globales.civilizaciones getCivilizacion(){
         return civilizacion;
     }
 
@@ -42,7 +42,7 @@ public class Civilizacion {
         almacen+=cantidad;
     }
 
-    public void anadirAldeano(){
+    private void anadirAldeano(){
         aldeanos.add(new Aldeano(civilizacion));
     }
 
@@ -60,5 +60,10 @@ public class Civilizacion {
 
     private void perderAldeano(int aldeanoPerdido){
         this.aldeanos.remove(aldeanoPerdido);
+    }
+
+    public void crecerONo(){
+        boolean siONo = Math.random() < probabilidad;
+        if(siONo) anadirAldeano();
     }
 }
