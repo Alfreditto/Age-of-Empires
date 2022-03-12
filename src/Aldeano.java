@@ -1,14 +1,16 @@
 public class Aldeano {
-    private enum civilizaciones {Espaniol, Bizantino};
-    private civilizaciones civilizacion;
+    
+    private Globales.civilizaciones civilizacion;
     private int salud;
 
-    public civilizaciones getCivilizacion() {
+    public Globales.civilizaciones getCivilizacion() {
         return civilizacion;
     }
 
-    public void setCivilizacion(civilizaciones civilizacion) {
+    private void setCivilizacion(Globales.civilizaciones civilizacion) {
         this.civilizacion = civilizacion;
+        salud = civilizacion == Globales.civilizaciones.Espanioles ? 200 : 250;
+        setSalud(salud);
     }
 
     public int getSalud() {
@@ -19,13 +21,7 @@ public class Aldeano {
         this.salud = salud;
     }
 
-    public Aldeano(boolean aux) {
-        if (aux) {
-            setCivilizacion(civilizaciones.Espaniol);
-            setSalud(200);
-        } else {
-            setCivilizacion(civilizaciones.Bizantino);
-            setSalud(250);
-        }
+    public Aldeano(Globales.civilizaciones civilizacion) {
+        setCivilizacion(civilizacion);
     }
 }
