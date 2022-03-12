@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
 public class Mina {
-    private enum materiales {Oro, Piedra};
+    private enum materiales {Oro, Piedra}
+
     private materiales material;
     private int cantera;
     private ArrayList<Aldeano> espanioles = new ArrayList<>();
-    private ArrayList<Aldeano> bizantino = new ArrayList<>();
+    private ArrayList<Aldeano> bizantinos = new ArrayList<>();
 
     public materiales getMaterial() {
         return material;
@@ -19,12 +20,12 @@ public class Mina {
         this.espanioles = espanioles;
     }
 
-    public ArrayList<Aldeano> getBizantino() {
-        return bizantino;
+    public ArrayList<Aldeano> getBizantinos() {
+        return bizantinos;
     }
 
-    public void setBizantino(ArrayList<Aldeano> bizantino) {
-        this.bizantino = bizantino;
+    public void setBizantinos(ArrayList<Aldeano> bizantinos) {
+        this.bizantinos = bizantinos;
     }
 
     public void setMaterial(materiales material) {
@@ -41,12 +42,27 @@ public class Mina {
 
     public Mina() {
         setMaterial(materiales.Oro);
-        setCantera(250);
+        setCantera(500);
     }
-    public int extraerRecursosEsp(){
+
+    public int extraerRecursosEsp() {
         return espanioles.size();
     }
-    public int extraerRecursosBiz(){
-        return bizantino.size();
+
+    public int extraerRecursosBiz() {
+        return bizantinos.size();
+    }
+
+    public void sumarEsp() {
+        espanioles.add(new Aldeano(true));
+    }
+    public void sumarBiz() {
+        bizantinos.add(new Aldeano(false));
+    }
+    public void convertirEsBiz(){
+        int aux = (int) (Math.random() * espanioles.size());
+        espanioles.get(aux).convertirEsBiz();
+        bizantinos.add(espanioles.get(aux));
+        espanioles.remove(aux);
     }
 }
