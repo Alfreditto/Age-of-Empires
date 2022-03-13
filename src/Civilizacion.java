@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 
 public class Civilizacion {
-    String[] reyes = new String[]{"Fernando el calvo", "Adolfo el cojo", "Jaime el loco", "Alfredo la tortuga", "Xinxi el mago", "Jose Triste", "Jose Feliz", "Juan Guadiana"};
+    String[] reyes = new String[]{"Kirby", "Adolfo el cojo", "Jaime el loco", "Alfredo la tortuga", "Xinxi el mago", "Jose Triste", "Jose Feliz", "Juan Guadiana"};
 
     private String rey;
 
@@ -19,7 +19,7 @@ public class Civilizacion {
     }
 
     private void setRey(){
-        rey = reyes[(int)(Math.random()*(reyes.length-1-0)+0)];
+        rey = reyes[(int)(Math.random()*(reyes.length - 1)+0)];
     }
 
     public String GetRey(){
@@ -53,9 +53,10 @@ public class Civilizacion {
     public void robarAldeano(Civilizacion robada){
         ArrayList<Aldeano> aldeanos = robada.aldeanos;
         if(aldeanos.size() <= 0) return;
-        int aldeanoARobar = (int)(Math.random()*(aldeanos.size()-0)+0);
+        int aldeanoARobar = (int)(Math.random()*(aldeanos.size())+0);
         this.aldeanos.add(aldeanos.get(aldeanoARobar));
         robada.perderAldeano(aldeanoARobar);
+        System.out.println("Los " + getCivilizacion() + " han robado a un aldeano a " + robada.getCivilizacion() + "\n");
     }
 
     private void perderAldeano(int aldeanoPerdido){
@@ -64,6 +65,9 @@ public class Civilizacion {
 
     public void crecerONo(){
         boolean siONo = Math.random() < probabilidad;
-        if(siONo) anadirAldeano();
+        if(siONo) {
+            System.out.println("Ha llegado un " + getCivilizacion() + "\n");
+            anadirAldeano();
+        }
     }
 }
